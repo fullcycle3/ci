@@ -2,13 +2,13 @@ name: ci-golanng-workflow
 on: 
   pull_request: 
     branches:
-      - develop
-strategy:
-  matrix:
-    go: ['1.19','1.20']      
+      - develop   
 jobs:
   check-application: 
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        go: ['1.19','1.20']   
     steps: 
       - uses: actions/checkout@v2 
       - uses: actions/setup-go@v2
